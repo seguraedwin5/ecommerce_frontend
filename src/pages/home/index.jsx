@@ -1,6 +1,10 @@
+import {Container} from 'react-bootstrap'
 function Home() {
     return ( 
-        <h1>Este es el Home</h1>
+        <Container className='d-flex justify-content-center mt-3'>
+            <div><h1>Hola Home</h1></div>
+        </Container>
+        
      );
 }
 
