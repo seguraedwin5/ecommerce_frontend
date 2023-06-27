@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { LogIn } from "@/services/serviceauth";
+import { Button, Form } from "react-bootstrap";
 
 
 function Login() {
@@ -22,15 +23,24 @@ function Login() {
     
     
     return ( 
-        <div>
+        <div className="p-3">
             <h1>Login</h1>
-            <form method="POST" onSubmit={HandleSubmit}>
-                <label htmlFor="user">User</label>
-                <input type="text" id="user" onChange={(e)=>{  SetUserState(e.target.value)}} value={UserState}/>
-                <label htmlFor="password">Password</label>
-                <input type="text" id="password" onChange={(e)=>{  SetPasswordState(e.target.value)}} value={PasswordState}/>
-                <button className="btn btn-primary" type="submit">Log In</button>
-            </form>
+            <Form method="POST" onSubmit={HandleSubmit} >
+                <Form.Group>
+                    <Form.Label htmlFor="user" >User</Form.Label>
+                    <Form.Control type="text" id="user" onChange={(e)=>{  SetUserState(e.target.value)}} value={UserState}/>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label htmlFor="password">Password</Form.Label>
+                    <Form.Control type="text" id="password" onChange={(e)=>{  SetPasswordState(e.target.value)}} value={PasswordState}/>
+                    <Button variant="success" type="submit" className="mt-3"> Log In</Button>
+                </Form.Group>
+                
+                
+                
+                
+                
+            </Form>
         </div>
      );
 }

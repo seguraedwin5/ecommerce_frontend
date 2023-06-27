@@ -1,14 +1,14 @@
 import { baseurl } from "./urls"
+import axios from 'axios'
 
 export function LogIn(logindata) {
     console.log(logindata);
     return (
-        fetch(baseurl + '/shop/api/token/', {
-            method: "POST",
+        axios.post(baseurl + '/shop/api/token/',JSON.stringify(logindata), {
+            
             headers: {
                 "Content-Type": "application/json"
-            },
-            body: JSON.stringify(logindata)
-        }).then((data) => { data.json() })
+            }
+        }).then((res) => { res.data })
     )
 }

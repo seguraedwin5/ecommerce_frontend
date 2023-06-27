@@ -7,19 +7,21 @@ const Layout = ({ children }) => {
 
             <Navbar expand='lg' className='bg-body-tertiary' bg='dark' data-bs-theme='dark'>
                 <Container>
-                    <Navbar.Brand>E-comercce</Navbar.Brand>
-                    <Nav className='me-auto'>
+                    <Navbar.Brand as={Link} href='/'>E-comercce</Navbar.Brand>
+                    <Navbar.Toggle aria-controls='elementos-navbar' /> {/* este elemento muestra el boton de hamburguesa y el collapse lleva el id y los elementos dentro */}
+                    <Navbar.Collapse id='elementos-navbar'>
+                        <Nav className='me-auto'>
 
-                        <Nav.Link as={Link} href="/home">Home</Nav.Link>
-                        <Nav.Link as={Link} href="/productos">Productos</Nav.Link>
-                        <Nav.Link as={Link} href="/categorias">Categorias</Nav.Link>
-                        <Nav.Link as={Link} href="/proveedores">Proveedores</Nav.Link>
-                    </Nav>
-                    <Nav className='ms-auto'>
-                        <Nav.Link as={Link} href="/auth/register">Registro</Nav.Link>
-                        <Nav.Link as={Link} href="/auth/login">Log In</Nav.Link>
-                    </Nav>
-
+                            <Nav.Link as={Link} href="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} href="/productos">Productos</Nav.Link>
+                            <Nav.Link as={Link} href="/categorias">Categorias</Nav.Link>
+                            <Nav.Link as={Link} href="/proveedores">Proveedores</Nav.Link>
+                        </Nav>
+                        <Nav className='ms-auto'>
+                            <Nav.Link as={Link} href="/auth/register">Registro</Nav.Link>
+                            <Nav.Link as={Link} href="/auth/login">Log In</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
 
