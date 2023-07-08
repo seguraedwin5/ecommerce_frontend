@@ -1,9 +1,25 @@
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import Link from 'next/link'
 
+const injectGA = () =>{
+    if (typeof window == 'undefined'){
+        return;
+    }
+    window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-LBFHV2JSBM');
+};
 const Layout = ({ children }) => {
+    
     return (
         <>
+           
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBFHV2JSBM"></script>
+        <script>{injectGA()}</script>
 
             <Navbar expand='lg' className='bg-body-tertiary' bg='dark' data-bs-theme='dark'>
                 <Container>

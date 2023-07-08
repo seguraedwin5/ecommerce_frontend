@@ -9,7 +9,7 @@ import ReactPlayer from 'react-player'
 export default function Index() {
   return (
    <Container>
-    
+        
    
        <Row>
         <Col>
